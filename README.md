@@ -33,6 +33,33 @@ Insira uma nota: 9
 Insira uma nota: 10
 ```
 
+### Instruções gerais
+- Escreva seu código dentro do arquivo **exercicio.py**
+- Fique atento a formtação das saídas. Caso haja algum texto incorreto, o teste irá falhar.
+- Os inputs do algoritmo não podem conter frases.
+- Exemplo de como **não** usar os inputs na sua resposta:
+```sh
+numero = int(input("Insira seu numero"))
+```
+
+- Exemplo de como usar os inputs **corretamente** na sua resposta:
+```sh
+numero = int(input())
+```
+- Caso não haja numeros da lista de notas a saida deverá ser:
+```sh
+Nenhuma nota inserida.
+```
+- Em relação ao item (B), caso não haja notas maiores que a média, veja **exemplo 4**, a saida para o item (B) deve ser:
+```sh
+Não há notas maiores que a media.
+```
+- A saida do item (D) deverá ser no formato: "maior(res), menor(res)". Caso haja apenas uma nota no maior ou no menor, a saida deverá ser o número. Caso haja mais de um numero no maior ou menor, a saida deverá ser a lista com esses numeros, observe o **exemplo 2**. Caso não haja notas maiores ou menores, ou seja, todas as notas são iguais, a saida do item (D) deve ser:
+```sh
+Todas as notas são iguais.
+```
+- Todas as entradas inválidas devem ser igoradas e não encerrar o programa. Observe o **exemplo 2**. **Dica:** Use `try except`.
+
 ### Exemplos
 #### Exemplo 1
 ##### Entrada
@@ -96,30 +123,3 @@ p
 (C) [9.0, 9.0, 9.0]
 (D) Todas as notas são iguais.
 ```
-
-### Instruções gerais
-- Escreva seu código dentro do arquivo **exercicio.py**
-- Fique atento a formtação das saídas. Caso haja algum texto incorreto, o teste irá falhar.
-- Os inputs do algoritmo não podem conter frases.
-- Exemplo de como **não** usar os inputs na sua resposta:
-```sh
-numero = int(input("Insira seu numero"))
-```
-
-- Exemplo de como usar os inputs **corretamente** na sua resposta:
-```sh
-numero = int(input())
-```
-- Caso não haja numeros da lista de notas a saida deverá ser:
-```sh
-Nenhuma nota inserida.
-```
-- Em relação ao item (B), caso não haja notas maiores que a média, veja **exemplo 4**, a saida para o item (B) deve ser:
-```sh
-Não há notas maiores que a media.
-```
-- A saida do item (D) deverá ser no formato: "maior(res), menor(res)". Caso haja apenas uma nota no maior ou no menor, a saida deverá ser o número. Caso haja mais de um numero no maior ou menor, a saida deverá ser a lista com esses numeros, observe o **exemplo 2**. Caso não haja notas maiores ou menores, ou seja, todas as notas são iguais, a saida do item (D) deve ser:
-```sh
-Todas as notas são iguais.
-```
-- Todas as entradas inválidas devem ser igoradas e não encerrar o programa. Observe o **exemplo 2**. **Dica:** Use `try except`.
