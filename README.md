@@ -1,41 +1,125 @@
-# k-vezesDigito
-### Objetivo do algoritmo: Verifica quantas vezes um dígito aparece em um determinado número de telefone (celular ou fixo). 
-O algoritmo deverá receber dois números inteiros, o primeiro será o número que deve ser verificado e o segundo será o número do telefone. 
+# ranking-notas
+### Objetivo do algoritmo: Realizar a classificação de uma lista notas com base em critérios diferentes.
+**Problema:** João é professor e precisa organizar notas de seus alunos de diversas formas. Faça um algoritmo que o ajude a:
+  - (A) Calcular a média da turma;
+  - (B) Mostrar as notas maiores que a média da turma;
+  - (C) Ordenar a lista de notas em ordem decrescente;
+  - (C) Mostrar o aluno com a nota mais alta da turma e o aluno com a nota mais baixa, considerando que podem existir alunos com notas iguais!
 
 ### Objetivos do exercicio:
-- A partir do código base dentro de **exercicio.py**, você deverá validar o que já está escrito, realizando as modificações necessárias para a execução correta do algoritmo.
-- Desenvolver a capacidade de detectar os casos de teste de um algoritmo
+- Desenvolver a capacidade de analisar um problema, encontrar as suas especificidades e conseguir transformar todos esses pontos em um código com boas práticas.
 
 ### Entrada
-- Número inteiro X entre 0 e 9.
-- String Y com 8 dígitos ou 9 dígitos. 
+- Número que irá representar a nota.
+- Letra **p** para indicar que todas as notas ja foram inseridas.
 
-### Saída
-- Quantidade de vezes que o primeiro número (X) aparece no segundo número (Y) ou string "entrada invalida".
+### Saídas
+- Média de turma
+- Notas maiores que a média
+- Lista de notas ordenada de forma decrescente
+- Maior(es) e Menor(es) nota(s).
 
 ### Observações
-**Obs1.:** O número do telefone Y (fixo ou celular) não deve iniciar por 0 ou uma sequência de 0s, caso seja, informar ao usuário ‘entrada invalida’. Tratar outros casos inválidos conforme descrição de entrada do problema, nesse caso informar também ‘entrada invalida’.
+**Obs1.:** O usuário deve poder inserir números decimais com vírgula ou com ponto. Ex: 8.7 e 8,7 devem representar o mesmo número: 8.7.
 
-**Obs2.:** Não é permitido manipular os dados de entrada como listas e não se deve usar funções de contagem e de pesquisa como o count(), find(), ou outras funções de listas/strings. Caso seja utilizado, a resolução não será corrigida e não será atribuída pontuação.
+**Obs2.:** As notas devem ser inseridas uma de cada vez. Ou seja, não serão aceitas entradas com multiplas notas em um só input. Exemplo:
+```sh
+## Forma errada
+Insira uma nota: 8.8 9 10
 
-**Obs3.:** Podem manipular como Strings, por exemplo, a entrada do telefone. O envio máximo permitido desta questão é até 2 vezes.
+## Forma correta
+Insira uma nota: 8.8
+Insira uma nota: 9
+Insira uma nota: 10
+```
 
 ### Exemplos
-| Numero inteiro X | String Y | Saida |
-| ------ | ------ | ------ |
-| 1 | 656789110 | 2 |
-| 0 | 00000000 | entrada invalida |
+#### Exemplo 1
+##### Entrada
+```sh
+8
+4
+9
+5
+10
+p
+```
+##### Saida
+```sh
+(A) 7.2
+(B) [8.0, 9.0, 10.0]
+(C) [10.0, 9.0, 8.0, 5.0, 4.0]
+(D) 10.0, 4.0
+```
+
+#### Exemplo 2
+##### Entrada
+```sh
+9.7
+4,5
+1,2
+1qa2
+1.2
+7
+p
+```
+##### Saida
+```sh
+(A) 4.72
+(B) [9.7, 7.0]
+(C) [9.7, 7.0, 4.5, 1.2, 1.2]
+(D) 9.7, [1.2, 1.2]
+```
+
+#### Exemplo 3
+##### Entrada
+```sh
+p
+```
+##### Saida
+```sh
+Nenhuma nota inserida.
+```
+
+#### Exemplo 4
+##### Entrada
+```sh
+9.0
+9,0
+9
+p
+```
+##### Saida
+```sh
+(A) 9.0
+(B) Não há notas maiores que a media.
+(C) [9.0, 9.0, 9.0]
+(D) Todas as notas são iguais.
+```
 
 ### Instruções gerais
 - Escreva seu código dentro do arquivo **exercicio.py**
-- Escreva os casos de teste do algoritmo dentro do arquivo **casosDeTeste.py**
-- Dentro do arquivo **exercicio.py** existe um código que resolve parcialmente o problema. Vocé deverá validar o que está escrito, realizando as modificações necessárias para a execução correta do algoritmo.
-- Dentro do arquivo **casosDeTeste.py** existe uma estrutura no formato: { "X-Y": "saida" }, onde X e Y são as entradas já descritas e devem ser separadas po hífen. Você deverá inserir seus casos de teste nele. Por exemplo, {"1-656781111" : "4"} significa que as entradas serão **X = 1**, **Y = 656781111** e a saida será **4**. Para inserir um novo caso de teste como, por exemplo,{"0-00000000" : "entrada invalida"}, basta inserir uma virgula e adicionar os novos dados, como no exemplo abaixo:
+- Fique atento a formtação das saídas. Caso haja algum texto incorreto, o teste irá falhar.
+- Os inputs do algoritmo não podem conter frases.
+- Exemplo de como **não** usar os inputs na sua resposta:
 ```sh
-{"1-656781111" : "4",
-"0-00000000" : "entrada invalida"}
+numero = int(input("Insira seu numero"))
 ```
-- Após a codificação do algoritmo não esqueça de **commitar as mudanças** clicando no botão commit **changes**.
-- Dentro do arquivo **exercicio.py** existem duas variáveis: **num1** e **num2** que representam **X** e **Y** respectivamente. Ou seja, você deverá usa-las como entradas do seu algoritmo. Note, que esse algoritmo não recebe as entradas através do ``` input()``` e sim através de ``` sys.argv[1]``` e ``` sys.argv[2]```. Para a codificação do algoritmo na sua máquina, você poderá ``` input()``` normalmente, mas não se esqueça de altera-lo para ``` sys.argv[1]``` e ``` sys.argv[2]``` no momento de submeter seu código.
-- Em hipótese alguma você deverá alterar o código do arquivo exercicio_test.py, caso seja detectada alguma alteração, sua resolução será desconsiderada.
 
+- Exemplo de como usar os inputs **corretamente** na sua resposta:
+```sh
+numero = int(input())
+```
+- Caso não haja numeros da lista de notas a saida deverá ser:
+```sh
+Nenhuma nota inserida.
+```
+- Em relação ao item (B), caso não haja notas maiores que a média, veja **exemplo 4**, a saida para o item (B) deve ser:
+```sh
+Não há notas maiores que a media.
+```
+- A saida do item (D) deverá ser no formato: "maior(res), menor(res)". Caso haja apenas uma nota no maior ou no menor, a saida deverá ser o número. Caso haja mais de um numero no maior ou menor, a saida deverá ser a lista com esses numeros, observe o **exemplo 2**. Caso não haja notas maiores ou menores, ou seja, todas as notas são iguais, a saida do item (D) deve ser:
+```sh
+Todas as notas são iguais.
+```
+- Todas as entradas inválidas devem ser igoradas e não encerrar o programa. Observe o **exemplo 2**. **Dica:** Use `try except`.
