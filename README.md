@@ -8,6 +8,7 @@
 
 ### Objetivos do exercicio:
 - Desenvolver a capacidade de analisar um problema, encontrar as suas especificidades e conseguir transformar todos esses pontos em um código com boas práticas.
+- Desenvolver a capacidade de trabalhar com listas.
 
 ### Entrada
 - Número que irá representar a nota.
