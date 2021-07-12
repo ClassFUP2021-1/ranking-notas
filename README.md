@@ -12,7 +12,7 @@
 
 ### Entrada
 - Número que irá representar a nota.
-- Letra **p** para indicar que todas as notas ja foram inseridas.
+- Letra **p** para indicar que todas as notas ja foram inseridas. Esssa é a **condição de parada**.
 
 ### Saídas
 - Média de turma
@@ -59,7 +59,7 @@ Não há notas maiores que a media.
 ```sh
 Todas as notas são iguais.
 ```
-- Todas as entradas inválidas devem ser igoradas e não encerrar o programa. Observe o **exemplo 2**. **Dica:** Use `try except`.
+- Todas as entradas inválidas devem ser ignoradas e não encerrar o programa. Observe o **exemplo 2**. **Dica:** Use `try except`.
 
 ### Exemplos
 #### Exemplo 1
